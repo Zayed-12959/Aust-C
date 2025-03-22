@@ -1,0 +1,32 @@
+WAP to find out the quotient and remainder of two numbers. (without using modulus (%) operator)
+WAP to input two numbers and print their quotient and remainder.
+
+#include<stdio.h>
+
+int main(){
+
+    int divisor;
+    int quotient;
+    int dividend;
+    int remainder;
+
+    printf("Enter dividend:");
+    scanf("%d", &dividend);
+
+    printf("Enter divisor:");
+    scanf("%d", &divisor);
+
+    if(divisor==0){
+        printf("Error! not allowed");
+    }
+
+    else{
+    quotient = dividend/divisor;
+    remainder = dividend - (divisor*quotient);
+
+    printf("Quotient: %d\n", quotient);
+    printf("Remainder: %d", remainder);
+    }
+
+return 0;
+}
