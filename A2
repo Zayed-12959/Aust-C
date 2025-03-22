@@ -1,0 +1,41 @@
+ WAP to input roll number, name and marks of a student in 5 subjects and calculate the total and average marks. Display all the values
+
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+    int roll;
+    char name[100];
+    int arr[5];
+
+    printf("Enter roll number: ");
+    scanf("%d", &roll);
+
+    getchar(); //consume newline character left by scanf
+
+    printf("Enter name: ");
+    gets(name);
+
+    int sum=0;
+
+    for(int i=0; i<5; i++){
+        printf("Subject %d:", i+1);
+        scanf("%d", &arr[i]);
+        sum = sum + arr[i];
+    }
+
+    float average = sum/5.00;
+
+    printf("Roll:%d\n", roll);
+    printf("Name:%s\n", name);
+
+    for(int i=0; i<5; i++){
+        printf("Subject %d: %d\n",i+1, arr[i]);
+    }
+
+    printf("Total marks:%d\n", sum);
+    printf("Average:%f", average);
+
+return 0;
+}
