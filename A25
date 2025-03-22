@@ -1,0 +1,17 @@
+WAP to input the temperature in Fahrenheit and convert it into Celsius and vice versa
+
+#include<stdio.h>
+
+int main() {
+
+    int temp_F;
+    printf("Enter temperature(F):");
+    scanf("%d", &temp_F);
+
+    float temp_C = (temp_F - 32.00)/9.00*5.00;
+
+    printf("Temperature in Celcius: %.2f", temp_C);
+
+
+    return 0;
+}
