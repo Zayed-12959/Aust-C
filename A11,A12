@@ -1,4 +1,5 @@
 WAP to input a character and print its ASCII value.
+WAP to input a number and print its equivalent character code.
 
 #include<stdio.h>
 
@@ -9,6 +10,13 @@ int main(){
     scanf("%c", &ch);
 
     printf("%d", ch);
+
+    int num;
+    printf("Enter a number:");
+    scanf("%d", &num);
+
+    printf("%c", num);
+
 
 return 0;
 }
