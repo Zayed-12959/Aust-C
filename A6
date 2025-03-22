@@ -1,0 +1,19 @@
+WAP to input length and breadth of a rectangle and calculate the area and perimeter.
+
+#include<stdio.h>
+
+int main(){
+
+    int length;
+    int breadth;
+
+    printf("Enter length: ");
+    scanf("%d", &length);
+    printf("Enter breadth: ");
+    scanf("%d", &breadth);
+
+    printf("Area: %d\n", length*breadth);
+    printf("Perimeter: %d", 2*(length + breadth));
+
+return 0;
+}
