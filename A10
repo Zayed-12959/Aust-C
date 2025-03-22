@@ -1,0 +1,19 @@
+WAP to input the number the days from the user and convert it into years, weeks and days.
+
+#include<stdio.h>
+
+int main(){
+
+    int number_of_days;
+    printf("Enter number of days: ");
+    scanf("%d", &number_of_days);
+
+    int year = number_of_days/365;
+    int month = (number_of_days%365)/30;
+    int week = ((number_of_days%365)%30)/7;
+    int day = ((number_of_days%365)%30)%7;
+
+    printf("Converted Values\n%d years %d months %d weeks %d days", year, month, week, day);
+
+return 0;
+}
