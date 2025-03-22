@@ -9,7 +9,7 @@ int main(){
     printf("Enter a character:");
     scanf("%c", &ch);
 
-    printf("%d", ch);
+    printf("%d\n", ch);
 
     int num;
     printf("Enter a number:");
