@@ -1,0 +1,23 @@
+WAP to input principle, rate and time from the user and calculate the simple interest and total amount. Display all the values.
+
+#include<stdio.h>
+
+int main(){
+
+    int p,r,n;
+
+    printf("Enter Principle: ");
+    scanf("%d", &p);
+    printf("Enter Rate: ");
+    scanf("%d", &r);
+    printf("Enter time(years): ");
+    scanf("%d", &n);
+
+    float I = p*(r/100.00)*n;
+    float total = I + p;
+
+    printf("Simple Interest: %.2f\n", I);
+    printf("Total Amount: %.2f", total);
+
+return 0;
+}
