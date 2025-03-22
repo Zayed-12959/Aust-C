@@ -1,0 +1,23 @@
+WAP to input radius and calculate the area and circumference of a circle.
+
+#include<stdio.h>
+
+int power(int base, int exp){
+    int result=1;
+    for(int i=1; i<=exp; i++){
+        result = result*base;
+    }
+return result;
+}
+
+int main(){
+
+    int radius;
+    printf("Enter radius: ");
+    scanf("%d", &radius);
+
+    printf("Area: %.2f\n", 3.1416*(float)power(radius,2));
+    printf("Circumference: %.2f", 2.00*3.1416*(float)radius);
+
+return 0;
+}
