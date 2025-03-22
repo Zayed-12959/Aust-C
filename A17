@@ -1,0 +1,18 @@
+WAP to input inches from the user and convert it into yards, feet and inches.
+
+#include<stdio.h>
+
+int main(){
+
+    int given_inches;
+    printf("Enter inches:");
+    scanf("%d", &given_inches);
+
+    int yard = given_inches/36;
+    int feet = (given_inches%36)/12;
+    int inches = (given_inches%36)%12;
+
+    printf("Converted Values\n%d yards %d feet %d inches", yard, feet, inches);
+
+return 0;
+}
