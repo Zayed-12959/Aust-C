@@ -1,0 +1,24 @@
+WAP to find out the square of a given number.
+WAP to input a number and print its cube
+
+#include<stdio.h>
+
+int power(int base, int exp){
+    int result=1;
+    for(int i=1; i<=exp; i++){
+        result = result*base;
+    }
+return result;
+}
+
+int main(){
+
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    printf("Square of the given number: %d\n", power(num,2));
+    printf("Cube of the given number: %d", power(num,3));
+
+return 0;
+}
