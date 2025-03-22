@@ -1,0 +1,28 @@
+WAP to input choice (1 or 2). If choice is 1 print the area of a circle otherwise print the circumference of circle. Input the radius from user.
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+    int radius;
+    printf("Enter Radius:");
+    scanf("%d", &radius);
+
+    int choice;
+    printf("Enter 1 for Area\nEnter 2 for Circumference\n");
+    scanf("%d", &choice);
+
+    switch(choice){
+    case 1:
+        printf("Area: %.2f", 3.1416*pow(radius,2));
+        break;
+    case 2:
+        printf("Circumference: %.2f", 2*3.1416*radius);
+        break;
+    default:
+        printf("Invalid Input.Please Enter 1 or 2");
+    }
+
+return 0;
+}
