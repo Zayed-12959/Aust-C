@@ -1,0 +1,29 @@
+WAP to input employee code, name and basic salary of an employee and calculate the following values: 
+HRA  40 % of basic salary
+DA   10 % of basic salary
+CCA  5 % of basic salary
+GS  Basic + HRA + DA + CCA   
+PF  10 % of GS 
+IT  10 % of GS
+NS GS – (PF + IT)
+
+#include <stdio.h>
+
+int main(){
+
+    int basic;
+    printf("Enter Basic Salary:");
+    scanf("%d", &basic);
+
+    float HRA = (40.00/100.00)*basic;
+    float DA = (10.00/100.00)*basic;
+    float CCA = (5.00/100.00)*basic;
+    float GS = basic + HRA + DA + CCA;
+    float PF = (10.00/100.00)*GS;
+    float IT = (10.00/100.00)*GS;
+    float NS = GS - (PF + IT);
+
+    printf("%.2f\n%.2f\n%.2f\n%.2f\n%.2f\n%.2f\n%.2f", HRA, DA, CCA, GS, PF, IT, NS);
+
+return 0;
+}
