@@ -1,0 +1,33 @@
+WAP to input monthly salary from the user and calculate the income tax according to the following rules
+Salary                       income tax 
+>=9000                       40% of the salary
+7500 - 8999                  30% of the salary
+<7500                        20% of the salary
+
+#include<stdio.h>
+
+int main(){
+
+    int salary;
+    float Tax;
+
+    printf("Enter monthly salary:");
+    scanf("%d", &salary);
+
+    if(salary>=9000){
+        Tax=(40.00/100.00)*(float)salary;
+    }
+    else if(salary>=7500 && salary<=8999){
+        Tax=(30.00/100.00)*(float)salary;
+    }
+    else if(salary<7500){
+        Tax=(20.00/100.00)*(float)salary;
+    }
+    else{
+        printf("Invalid salary input");
+    }
+
+    printf("Tax: %.2f", Tax);
+
+return 0;
+}
