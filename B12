@@ -1,0 +1,28 @@
+WAP to input the selling price and cost price from the user and determine whether the seller has made profit or incurred loss. Also display the value of profit or loss.
+
+#include<stdio.h>
+
+int main(){
+
+    int buying;
+    int selling;
+
+    printf("Enter buying price:");
+    scanf("%d", &buying);
+
+    printf("Enter selling price:");
+    scanf("%d", &selling);
+
+    if(buying>selling){
+        printf("User has made a loss of: %dTk", buying-selling);
+    }
+    else if(selling>buying){
+        printf("User has made a profit of: %dTk", selling-buying);
+    }
+    else{
+        printf("User has not made any loss or profit");
+    }
+
+
+return 0;
+}
