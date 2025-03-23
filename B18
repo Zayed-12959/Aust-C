@@ -1,0 +1,38 @@
+WAP to input the sales made by a salesman and calculate the commission according to the following conditions:
+
+Sales                           Commission 
+1 - 10000                           4%
+10001 - 20000                       5%
+20001 - 30000                       6%
+>30000                              7%
+
+#include <stdio.h>
+
+int main() {
+
+    int sales;
+    float commission;
+
+    printf("Enter number of sales:");
+    scanf("%d", &sales);
+
+    if(sales>=1 && sales<=10000){
+        commission = (float)sales * (4.00/100.00);
+    }
+    else if(sales>=10001 && sales<=20000){
+        commission = (float)sales * (5.00/100.00);
+    }
+    else if(sales>=20001 && sales<=30000){
+        commission = (float)sales * (6.00/100.00);
+    }
+    else if(sales>30000){
+        commission = (float)sales * (7.00/100.00);
+    }
+    else{
+        printf("Invalid input");
+    }
+
+    printf("Commission: %.2f", commission);
+
+    return 0;
+}
