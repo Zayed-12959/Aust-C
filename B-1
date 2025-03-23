@@ -1,0 +1,20 @@
+WAP to input the marks of a student and print the result (passing marks = 40 %)
+
+#include<stdio.h>
+
+int main(){
+
+    int mark;
+
+    printf("Enter Mark of the Student: ");
+    scanf("%d", &mark);
+
+    if(mark<40){
+        printf("Failed");
+    }
+    else{
+        printf("Mark: %d", mark);
+    }
+
+return 0;
+}
