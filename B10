@@ -2,6 +2,7 @@ An electricity board charges according to the following rates:
 For the first 100 units - 40 paisa per unit. 
 For the next 200 units - 50 paisa per unit. 
 beyond 300 units - 60 paisa per unit
+All users are charged meter charges also, which are Rs. 50/ -
 
 #include<stdio.h>
 
