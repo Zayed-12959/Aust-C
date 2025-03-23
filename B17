@@ -1,0 +1,45 @@
+WAP to input the marks of a student in five subjects and calculate the grade according the following conditions:
+mark            Grade
+> 90	          S
+76 - 90	        A
+61 - 75        	B
+51 - 60        	C
+40 - 50        	D
+< 40	          Fail
+
+#include <stdio.h>
+
+int main() {
+
+    int mark[5];
+
+    for(int i=0; i<5; i++){
+        printf("Subject %d:", i+1);
+        scanf("%d", &mark[i]);
+    }
+
+    for(int i=0; i<5; i++){
+        printf("Subject %d: %d\t", i+1, mark[i]);
+        if(mark[i]>90){
+            printf("Grade: S");
+        }
+        else if(mark[i]>=76 && mark[i]<=90){
+            printf("Grade: A");
+        }
+        else if(mark[i]>=61 && mark[i]<=75){
+            printf("Grade: B");
+        }
+        else if(mark[i]>=51 && mark[i]<=60){
+            printf("Grade: C");
+        }
+        else if(mark[i]>=40 && mark[i]<=50){
+            printf("Grade: D");
+        }
+        else if(mark[i]<40){
+            printf("Grade: F");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
