@@ -1,0 +1,31 @@
+ WAP to find out the sum and average of all the numbers within the given range.
+
+#include<stdio.h>
+
+int main(){
+
+    int start,end;
+
+    printf("Enter start and end of the range:");
+    scanf("%d-%d", &start, &end);
+
+    int sum = 0;
+    int count = 0;
+
+    if(start<end){
+        for(int i=start; i<=end; i++){
+            sum = sum + i;
+            count++;
+        }
+
+        float average = (float)sum/count;
+
+        printf("Sum=%d\nAverage=%.2f", sum, average);
+    }
+
+    else{
+        printf("Error! End should be greater than start");
+    }
+
+return 0;
+}
