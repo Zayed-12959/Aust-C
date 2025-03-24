@@ -1,0 +1,57 @@
+WAP to input two numbers and an operator and calculate the result according to the following conditions: 
+Operator   Result 
++            add
+-            substract
+*            multiply
+/            divide
+%            modulus
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    char operation;
+
+    printf("Enter Two Numbers:\n");
+    scanf("%d %d", &a, &b);
+
+    getchar();
+
+    printf("Enter Operation:\n(+:add)\n(-:subtract)\n(*:multiply)\n(/:divide)\n(%:remainder)\n");
+    scanf("%c", &operation);
+
+    switch (operation) {
+        case '+':
+            printf("Result: %d\n", a + b);
+            break;
+
+        case '-':
+            printf("Result: %d\n", a - b);
+            break;
+
+        case '*':
+            printf("Result: %d\n", a * b);
+            break;
+
+        case '/':
+            if (b != 0) {
+                printf("Result: %.2f\n", (float)a / b);
+            } else {
+                printf("Error: Division by zero is not allowed.\n");
+            }
+            break;
+
+        case '%':
+            if (b != 0) {
+                printf("Result: %d\n", a % b);
+            } else {
+                printf("Error: Modulo by zero is not allowed.\n");
+            }
+            break;
+
+        default:
+            printf("Invalid Input! Please choose a valid operation (1-5).\n");
+    }
+
+    return 0;
+}
