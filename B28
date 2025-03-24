@@ -1,0 +1,47 @@
+WAP to input a date (dd / mm / yyyy) and check for the validity of the date
+
+#include<stdio.h>
+
+int isleapyear(int year){
+    return ((year%400==0) || (year%4==0 && year%100!=0));
+}
+
+int isvaliddate(int day, int month, int year){
+    //year validity
+    if(year<1){
+        return 0;
+    }
+    //month validity
+    if(month<1 || month>12){
+        return 0;
+    }
+    //days in months
+    int daysinmonth[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+    //feb day in leap year
+    if(month == 2 && isleapyear(year)){
+        daysinmonth[2] = 29;
+    }
+    //day validity
+    if(day<1 || day>daysinmonth[month]){
+        return 0;
+    }
+
+return 1;
+}
+
+int main(){
+
+    int day,month,year;
+
+    printf("Enter Date(dd/mm/yyyy):\n");
+    scanf("%d/%d/%d", &day, &month, &year);
+
+    if(isvaliddate(day,month,year)){
+        printf("The date %02d/%02d/%04d is valid", day, month, year);
+    }
+    else{
+        printf("The date %02d/%02d/%04d is not valid", day, month, year);
+    }
+
+return 0;
+}
