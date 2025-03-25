@@ -1,0 +1,35 @@
+WAP to input a number and count its even and odd digits and find out their sum separately.
+
+#include<stdio.h>
+
+int main(){
+
+    int num;
+    printf("Enter a number:");
+    scanf("%d", &num);
+
+    int digit;
+    int evencount = 0;
+    int evensum = 0;
+    int oddcount = 0;
+    int oddsum = 0;
+
+    for( ; num!=0; num = num/10){
+        digit = num%10;
+        if(digit%2==0){
+            evencount++;
+            evensum = evensum+digit;
+        }
+        else{
+            oddcount++;
+            oddsum = oddsum+digit;
+        }
+    }
+
+    printf("Number of even digits: %d\n", evencount);
+    printf("Sum of even digits: %d\n", evensum);
+    printf("Number of odd digits: %d\n", oddcount);
+    printf("Sum of odd digits: %d\n", oddsum);
+
+return 0;
+}
