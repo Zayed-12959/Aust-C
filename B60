@@ -1,0 +1,33 @@
+ WAP to find out the LCM and GCD of two given numbers.
+
+#include<stdio.h>
+
+int GCD(int a, int b){
+int gcd;
+    for(int i=1; i<a && i<b; i++){
+        if(a%i==0 && b%i==0){
+            gcd = i;
+        }
+    }
+return gcd;
+}
+
+int LCM(int a, int b){
+
+int lcm = (a*b)/(GCD(a,b));
+
+return lcm;
+}
+
+int main(){
+
+    int a, b;
+
+    printf("Enter two numbers:\n");
+    scanf("%d%d", &a, &b);
+
+    printf("GCD : %d\n", GCD(a,b));
+    printf("LCM: %d\n", LCM(a,b));
+
+return 0;
+}
