@@ -1,0 +1,25 @@
+WAP to input a number and separate the number in its individual digit and print the digits separated from one another by three spaces each.
+
+#include<stdio.h>
+
+int main(){
+
+    int num;
+    printf("Enter a number:");
+    scanf("%d", &num);
+
+    int digit;
+    int reverse;
+    for( ; num!=0; num = num/10){
+        digit = num%10;
+        reverse = reverse*10 + digit;
+    }
+
+    int reversedigit;
+    for( ; reverse!=0; reverse = reverse/10){
+        reversedigit = reverse%10;
+        printf("%d   ", reversedigit);
+    }
+
+return 0;
+}
