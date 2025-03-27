@@ -1,0 +1,32 @@
+WAP to input a string and replace every lower case letter with upper case letter, upper case letter with a lower case letter, digit with a ‘#’ and a special symbol with a ‘%’. Display the new string
+
+
+#include<stdio.h>
+#include<ctype.h>
+
+int main(){
+
+    char str[1000];
+    int i;
+
+    printf("Enter a string:");
+    fgets(str, sizeof(str), stdin);
+
+    for(i=0; str[i]!='\0'; i++){
+        if(islower(str[i])){
+            str[i] = toupper(str[i]);
+        }
+        else if(isupper(str[i])){
+            str[i] = tolower(str[i]);
+        }
+        else if(isdigit(str[i])){
+            str[i] = '#';
+        }
+        else if(!isspace(str[i])){
+            str[i] = '%';
+        }
+    }
+    printf("Modiefied string: %s", str);
+
+return 0;
+}
