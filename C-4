@@ -1,0 +1,25 @@
+WAP to input a multi word string and produce a string in which first letter of each word is capitalized.
+
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main(){
+
+    char str[1000];
+
+    printf("Enter a string:");
+    gets(str);
+
+    for(int i=0; str[i]!='\0'; i++){
+        if(i==0 || str[i-1]==' '){
+            if(str[i]>='a' && str[i]<='z'){
+                str[i] = str[i] - ('a' - 'A');
+            }
+        }
+    }
+
+    printf("%s", str);
+
+return 0;
+}
