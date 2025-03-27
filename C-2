@@ -1,0 +1,43 @@
+ WAP to input a character and a string. Each occurrence of a character in the string should be converted to opposite case i.e. upper to lower case or vice versa.
+
+#include<stdio.h>
+#include<ctype.h>
+
+int main(){
+
+    char str[1000];
+    char ch;
+
+    printf("Enter a character:");
+    scanf("%c", &ch);
+
+    getchar();
+
+    printf("Enter a string:");
+    gets(str);
+
+
+
+    for(int i=0; str[i]!='\0'; i++){
+        if(islower(ch)){
+            if(str[i]==ch){
+                str[i] = str[i] - ('a' - 'A');
+            }
+            else if(str[i]==toupper(ch)){
+                str[i] = str[i] + ('a' - 'A');
+            }
+        }
+        else if(isupper(ch)){
+            if(str[i]==ch){
+                str[i] = str[i] + ('a' - 'A');
+            }
+            else if(str[i]==tolower(ch)){
+                str[i] = str[i] - ('a' - 'A');
+            }
+        }
+    }
+    
+    printf("%s", str);
+
+return 0;
+}
