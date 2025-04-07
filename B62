@@ -1,0 +1,41 @@
+WAP to check whether square root of a number is prime or not
+
+#include<stdio.h>
+
+isprime(int num){
+    if(num<=1){
+        return 0;
+    }
+    for(int i = 2; i<=num/2; i++){
+        if(num%i==0){
+            return 0;
+        }
+    }
+return 1;
+}
+
+int main() {
+
+        int num;
+
+        printf("Enter a number: ");
+        scanf("%d", &num);
+
+        int found = 0;
+
+        for(int i=0; i<=num; i++){
+            if(i*i == num){
+                if(isprime(i)){
+                        found++;
+                    printf("square root of %d is %d which is a prime number", num, i);
+                    break;
+                }
+                else if(!isprime(i)){
+                    printf("square root of %d is %d which is not a prime number", num, i);
+                    break;
+                }
+            }
+        }
+
+    return 0;
+}
