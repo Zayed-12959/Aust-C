@@ -1,0 +1,37 @@
+ WAP to input the sales made by a salesman in every month of a given year and find out the total, average, maximum and minimum sales
+
+
+#include <stdio.h>
+
+int main() {
+
+    int month[12];
+    int total = 0;
+    int max;
+    int min;
+
+    for(int i=0; i<12; i++){
+        printf("month %d:", i+1);
+        scanf("%d", &month[i]);
+        total += month[i];
+    }
+
+    max = month[0];
+    min = month[0];
+
+    for(int i=0; i<10; i++){
+        if(month[i]>max){
+            max=month[i];
+        }
+        if(month[i]<min){
+            min=month[i];
+        }
+    }
+
+    printf("Total sales: %d", total);
+    printf("Average sales: %d", total/12);
+    printf("Max sales: %d", max);
+    printf("Min sales: %d", min);
+
+    return 0;
+}
