@@ -1,0 +1,33 @@
+ WAP to calculate the average of 10 values stored in an array and display all those values which are more than the calculated average.
+
+
+#include <stdio.h>
+
+int main() {
+
+    int arr[10];
+    int total = 0;
+
+    printf("Enter the values:\n");
+
+    for(int i=0; i<10; i++){
+        printf("value %d:", i+1);
+        scanf("%d", &arr[i]);
+        total += arr[i];
+    }
+
+    float average = total/10.00;
+
+    printf("Average: %.2f", average);
+
+    for(int i=0; i<10; i++){
+        if((float)arr[i]>average){
+            printf("%d\n", arr[i]);
+        }
+        else{
+            continue;
+        }
+    }
+
+    return 0;
+}
