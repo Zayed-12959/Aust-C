@@ -1,0 +1,52 @@
+WAP to print all the palindrome numbers from an integer array and find out their sum.
+
+#include <stdio.h>
+
+int palindrome(int num){
+    if(num<0){
+        return 0;
+    }
+    int digit;
+    int reverse = 0;
+    int original = num;
+for( ; num!=0; num=num/10){
+    digit = num%10;
+    reverse = reverse*10 + digit;
+}
+if(reverse==original){
+    return 1;
+}
+else{
+    return 0;
+}
+}
+
+int main() {
+
+    int n;
+    printf("Enter the number of elements in this array:\n");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter elements of the array:\n");
+    for(int i=0; i<n; i++){
+        printf("Element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    int sum = 0;
+
+    for(int i=0; i<n; i++){
+        if(palindrome(arr[i])){
+                printf("%d ", arr[i]);
+            sum = sum + arr[i];
+        }
+    }
+
+    printf("\n");
+
+    printf("Sum of the palindrome numbers of the array: %d", sum);
+
+    return 0;
+}
