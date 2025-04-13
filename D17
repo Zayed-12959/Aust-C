@@ -1,0 +1,42 @@
+ WAP to delete all the occurrences of a given value from the array and shift the remaining elements to the left of the array.
+
+
+#include <stdio.h>
+
+int main(){
+
+    int n;
+
+    printf("Array element number:\n");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter array elements:\n");
+    for(int i=0; i<n; i++){
+        printf("Element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    int value;
+    printf("Enter a value to delete: ");
+    scanf("%d", &value);
+
+    int count=0;
+
+    for(int i=0; i<n; i++){
+        if(arr[i]==value){
+                count++;
+            for(int j=i; j<n; j++){
+                arr[j] = arr[j+1];
+            }
+            i--;
+        }
+    }
+
+    printf("The new array\n");
+    for(int i=0; i<n-count; i++){
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
