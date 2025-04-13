@@ -1,0 +1,27 @@
+ WAP to input 10 values in a float array and display all the values more than 75.
+
+
+#include <stdio.h>
+
+int main(){
+
+    int n;
+    printf("Enter the number of elements in this array:\n");
+    scanf("%d", &n);
+
+    float arr[n];
+
+    printf("Enter elements of the array:\n");
+    for(int i=0; i<n; i++){
+        printf("Element %d: ", i+1);
+        scanf("%f", &arr[i]);
+    }
+
+    for(int i=0; i<n; i++){
+        if(arr[i]>75.00){
+            printf("%.2f ", arr[i]);
+        }
+    }
+
+    return 0;
+}
