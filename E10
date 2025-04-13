@@ -1,0 +1,56 @@
+WAP to find out the sum of negative, positive, odd and even integers separately from a two dimensional array.
+
+#include<stdio.h>
+
+int main(){
+
+    int n;
+    printf("Enter number of row col:");
+    scanf("%d", &n);
+
+    int arr[n][n];
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            printf("Elemment[%d][%d]:", i,j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    printf("The array\n");
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            printf("%d  ", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    int neg = 0;
+    int pos = 0;
+    int odd = 0;
+    int even = 0;
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(arr[i][j]<0){
+                neg += arr[i][j];
+            }
+            if(arr[i][j]>0){
+                pos += arr[i][j];
+            }
+            if(arr[i][j]%2==0){
+                even += arr[i][j];
+            }
+            if(arr[i][j]%2!=0){
+                odd += arr[i][j];
+            }
+        }
+    }
+
+    printf("Sum of negatives: %d\n", neg);
+    printf("Sum of positives: %d\n", pos);
+    printf("Sum of odds: %d\n", odd);
+    printf("Sum of evens: %d", even);
+
+return 0;
+}
