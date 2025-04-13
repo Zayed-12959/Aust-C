@@ -1,0 +1,39 @@
+WAP to find out the sum of non - diagonal elements
+
+#include<stdio.h>
+
+int main(){
+
+    int n;
+    printf("Enter number of row col:");
+    scanf("%d", &n);
+
+    int arr[n][n];
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            printf("Elemment[%d][%d]:", i,j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    printf("The array\n");
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            printf("%d", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    int sum = 0;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(i!=j && i+j!=n-1){
+                sum += arr[i][j];
+            }
+        }
+    }
+    printf("Non-diagonal sum: %d", sum);
+
+return 0;
+}
