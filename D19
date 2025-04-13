@@ -1,0 +1,42 @@
+WAP to insert a value in the array at desired location.
+
+
+#include <stdio.h>
+
+int main(){
+    int n;
+
+    printf("Array element number:\n");
+    scanf("%d", &n);
+
+    int arr[n+1];
+    printf("Enter array elements:\n");
+    for(int i=0; i<n; i++){
+        printf("Element %d: ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    int location;
+    printf("Enter a location: ");
+    scanf("%d", &location);
+
+    int value;
+    printf("Enter a value to be entered: ");
+    scanf("%d", &value);
+
+    for(int i=0; i<n+1; i++){
+        if(location==i){
+            for(int j=n-1; j>=i; j--){
+                arr[j+1] = arr[j];
+            }
+        }
+    }
+    arr[location] = value;
+
+    printf("New array:\n");
+    for(int i=0; i<n+1; i++){
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
