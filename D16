@@ -1,0 +1,67 @@
+WAP delete an element from the array and shift the elements 
+(1) Towards right. 
+(2) Towards left
+
+#include <stdio.h>
+
+int main(){
+
+    int n;
+    printf("Enter the number of elements of the array: ");
+    scanf("%d", &n);
+
+    int arr1[n];
+    int arr2[n];
+
+    printf("Enter First array elements:\n");
+    for(int i=0; i<n; i++){
+        printf("Element1 %d: ", i+1);
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter Second array elements:\n");
+    for(int i=0; i<n; i++){
+        printf("Element2 %d: ", i+1);
+        scanf("%d", &arr2[i]);
+    }
+
+    int el;
+    printf("Enter and element which needs to be deleted:");
+    scanf("%d", &el);
+
+    for(int i=0; i<n; i++){
+        if(arr1[i]==el){
+            for(int j=i; j>=0; j--){
+                arr1[j]=arr1[j-1];
+            }
+        }
+    }
+    arr1[0] = 0;
+
+    printf("Array after shifting right:\n");
+    for(int i=0; i<n; i++){
+        printf("%d ", arr1[i]);
+    }
+    printf("\n");
+
+    int el2;
+    printf("Enter and element which needs to be deleted:");
+    scanf("%d", &el2);
+
+    for(int i=0; i<n; i++){
+        if(arr2[i]==el2){
+            for(int j=i; j<n; j++){
+                arr2[j] = arr2[j+1];
+            }
+        }
+    }
+
+    printf("Array after shifting Left:\n");
+    for(int i=0; i<n; i++){
+        printf("%d ", arr2[i]);
+    }
+
+    arr2[n-1] = 0;
+
+    return 0;
+}
