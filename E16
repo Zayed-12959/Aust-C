@@ -1,0 +1,36 @@
+WAP to find out the sum of the elements above and below the main diagonal of a square matrix.
+
+
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    int matrix[10][10];  // You can change the size if needed
+    int sumAbove = 0, sumBelow = 0;
+
+    printf("Enter the order of the square matrix (n x n): ");
+    scanf("%d", &n);
+
+    printf("Enter elements of the %d x %d matrix:\n", n, n);
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Calculating sums
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            if (j > i)
+                sumAbove += matrix[i][j];
+            else if (i > j)
+                sumBelow += matrix[i][j];
+        }
+    }
+
+    printf("\nSum of elements ABOVE main diagonal: %d\n", sumAbove);
+    printf("Sum of elements BELOW main diagonal: %d\n", sumBelow);
+
+    return 0;
+}
