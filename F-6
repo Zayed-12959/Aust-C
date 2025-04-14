@@ -1,0 +1,18 @@
+ Write a function that accepts a character as argument and returns its ASCII value
+
+#include <stdio.h>
+
+int getASCII(char ch) {
+    return (int) ch;
+}
+
+int main() {
+    char c;
+    printf("Enter a character: ");
+    scanf(" %c", &c);  // Note the space before %c to consume any leftover newline
+
+    int ascii = getASCII(c);
+    printf("ASCII value of '%c' = %d\n", c, ascii);
+
+    return 0;
+}
