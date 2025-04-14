@@ -1,0 +1,57 @@
+WAP to print all the prime numbers from a 2D array and find out their sum.
+
+
+#include<stdio.h>
+
+int prime(int num){
+if(num<=1){
+    return 0;
+}
+for(int i=2; i<=num/2; i++){
+    if(num%i==0){
+        return 0;
+    }
+}
+return 1;
+}
+
+int main(){
+
+    int n;
+    printf("Enter number of row col:");
+    scanf("%d", &n);
+
+    int arr[n][n];
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            printf("Elemment[%d][%d]:", i,j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    printf("The array\n");
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            printf("%d  ", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    int sum = 0;
+    printf("Prime elements:\n");
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(prime(arr[i][j])){
+                printf("%d ", arr[i][j]);
+                sum += arr[i][j];
+            }
+        }
+    }
+
+    printf("\n");
+
+    printf("Sum of the prime elements: %d", sum);
+
+return 0;
+}
