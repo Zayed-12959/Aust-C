@@ -1,0 +1,48 @@
+ WAP to transpose a square matrix
+
+
+#include<stdio.h>
+
+int main(){
+
+    int row;
+    printf("Number of rows:");
+    scanf("%d", &row);
+    int col;
+    printf("Number of columns:");
+    scanf("%d", &col);
+
+    int arr[row][col];
+
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            printf("Element[%d][%d]:", i,j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    printf("The array:\n");
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            printf("%d", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    int transpose[col][row];
+    for(int j=0; j<col; j++){
+        for(int i=0; i<row; i++){
+            transpose[j][i] = arr[i][j];
+        }
+    }
+
+    printf("The transposed array:\n");
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+return 0;
+}
