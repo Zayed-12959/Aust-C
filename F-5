@@ -1,0 +1,23 @@
+Write a function that has three arguments principle, rate and time and returns the simple interest.
+
+#include <stdio.h>
+
+float interest(int principal, int rate, int time){
+    float result = principal*(rate/100.00)*time;
+return result;
+}
+
+int main(){
+
+    int principal, rate, time;
+    printf("Enter principal:\n");
+    scanf("%d", &principal);
+    printf("Enter rate:\n");
+    scanf("%d", &rate);
+    printf("Enter time:\n");
+    scanf("%d", &time);
+
+    printf("Simple Interest: %.2f", interest(principal,rate,time));
+
+return 0;
+}
