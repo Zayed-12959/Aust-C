@@ -1,0 +1,62 @@
+WAP to sort the elements of a matrix row - wise and column - wise.
+
+
+#include <stdio.h>
+
+int main(){
+    int mat[10][10], i, j, k, temp;
+    int row, col;
+
+    printf("Enter number of rows and columns:\n");
+    scanf("%d %d", &row, &col);
+
+    printf("Enter matrix elements:\n");
+    for(i=0; i<row; i++){
+        for(j=0; j<col; j++){
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    // Row-wise Bubble Sort
+    for(i=0; i<row; i++){
+        for(j=0; j<col-1; j++){
+            for(k=0; k<col-1-j; k++){
+                if(mat[i][k] > mat[i][k+1]){
+                    temp = mat[i][k];
+                    mat[i][k] = mat[i][k+1];
+                    mat[i][k+1] = temp;
+                }
+            }
+        }
+    }
+
+    printf("\nMatrix after Row-wise Sorting:\n");
+    for(i=0; i<row; i++){
+        for(j=0; j<col; j++){
+            printf("%d\t", mat[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Column-wise Bubble Sort
+    for(j=0; j<col; j++){
+        for(i=0; i<row-1; i++){
+            for(k=0; k<row-1-i; k++){
+                if(mat[k][j] > mat[k+1][j]){
+                    temp = mat[k][j];
+                    mat[k][j] = mat[k+1][j];
+                    mat[k+1][j] = temp;
+                }
+            }
+        }
+    }
+
+    printf("\nMatrix after Column-wise Sorting:\n");
+    for(i=0; i<row; i++){
+        for(j=0; j<col; j++){
+            printf("%d\t", mat[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
