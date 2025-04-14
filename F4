@@ -1,0 +1,22 @@
+Write a function to calculate the area of a rectangle where length and breadth are passed to the function as argument.
+
+
+#include <stdio.h>
+
+int area(int length, int breadth){
+    int result = length*breadth;
+return result;
+}
+
+int main(){
+
+    int length, breadth;
+    printf("Enter length:\n");
+    scanf("%d", &length);
+    printf("Enter breadth:\n");
+    scanf("%d", &breadth);
+
+    printf("Area of the rectangle: %d", area(length, breadth));
+
+return 0;
+}
