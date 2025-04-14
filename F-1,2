@@ -1,0 +1,26 @@
+ Write a function that takes one integer argument and returns its square.
+Write a function to calculate the cube of a number
+
+
+#include <stdio.h>
+
+long long power(int base, int exp){
+    long long result = 1;
+    for(int i=1; i<=exp; i++){
+        result = result*base;
+    }
+return result;
+}
+
+int main(){
+
+    int num;
+
+    printf("Enter a number to find exponent: \n");
+    scanf("%d", &num);
+
+    printf("The square of this number is: %lld\n", power(num, 2));
+    printf("The cube of this number is: %lld", power(num, 3));
+
+return 0;
+}
