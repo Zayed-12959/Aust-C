@@ -1,0 +1,24 @@
+ Write a function that has two integer arguments and returns first number raised to the power second number.
+
+
+
+#include<stdio.h>
+
+long long power(int base, int exp){
+    long long pow = 1;
+    for(int i=1; i<=exp; i++){
+        pow = pow*base;
+    }
+return pow;
+}
+
+int main(){
+
+    int n, r;
+    printf("Enter a number for raising the power to the second number:\n");
+    scanf("%d%d", &n, &r);
+
+    printf("Power(n,r): %d\n", power(n,r));
+
+return 0;
+}
