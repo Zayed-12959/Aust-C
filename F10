@@ -1,0 +1,31 @@
+Write a function to print the sum and average of first n natural numbers where n is passed to the function as argument.
+
+
+#include<stdio.h>
+
+int sumofnumbers(int n){
+    int sum = 0;
+    for(int i=0; i<=n; i++){
+        sum = sum + i;
+    }
+return sum;
+}
+
+float averageofnumbers(int n){
+    float average;
+    average = (float)sumofnumbers(n)/n;
+
+return average;
+}
+
+int main(){
+
+    int n;
+    printf("Enter number of natural numbers to be summed and averaged:\n");
+    scanf("%d", &n);
+
+    printf("Sum = %d\n", sumofnumbers(n));
+    printf("Average = %.2f", averageofnumbers(n));
+
+return 0;
+}
