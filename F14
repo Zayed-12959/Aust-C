@@ -1,0 +1,46 @@
+Write a function that prints the sum of the digits, count of the digits and reverse of a number. Number is passed to the function as argument.
+
+
+
+#include<stdio.h>
+
+int sumofdigits(int n){
+    int digit;
+    int sum = 0;
+    for( ; n!=0; n=n/10){
+        digit = n%10;
+        sum = sum + digit;
+    }
+return sum;
+}
+
+int countofdigits(int n){
+    int count = 0;
+    for( ; n!=0; n=n/10){
+        count++;
+    }
+return count;
+}
+
+int reverseofnumber(int n){
+    int reverse = 0;
+    int digit;
+    for( ; n!=0; n=n/10){
+        digit = n%10;
+        reverse = reverse*10 + digit;
+    }
+return reverse;
+}
+
+int main(){
+
+    int n;
+    printf("Enter a number for sum of digit, count of digit, reversification:\n");
+    scanf("%d", &n);
+
+    printf("Sum: %d\n", sumofdigits(n));
+    printf("Count: %d\n", countofdigits(n));
+    printf("Reversed: %d\n", reverseofnumber(n));
+
+return 0;
+}
