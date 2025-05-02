@@ -1,0 +1,40 @@
+WAP to extract given number of characters, from the desired location from the string
+
+
+#include<stdio.h>
+
+int strlen(char string[]){
+    int count = 0;
+    for(int i=0; string[i]!='\0'; i++){
+        count++;
+    }
+return count;
+}
+
+void substring(char source[], int start, int length, char result[]){
+    int i;
+    for(i=0; i<length; i++){
+        result[i] = source[start + i];
+    }
+    result[i] = '\0';
+}
+
+int main() {
+    char str[100], extracted[100];
+    int position, length;
+
+    printf("Enter a string: ");
+    gets(str);  // Note: gets is unsafe; prefer fgets in real programs
+
+    printf("Enter starting position (0-based index): ");
+    scanf("%d", &position);
+
+    printf("Enter number of characters to extract: ");
+    scanf("%d", &length);
+
+    substring(str, position, length, extracted);
+
+    printf("Extracted substring: %s\n", extracted);
+
+    return 0;
+}
