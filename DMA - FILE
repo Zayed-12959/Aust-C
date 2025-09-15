@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[30];
+    char dept[20];
+    double cgpa;
+};
+
+int main() {
+    struct Student *students;
+    int n;
+
+    // Input initial size
+    printf("Input number of students: ");
+    scanf("%d", &n);
+
+    // Allocate memory
+    students = malloc(n * sizeof(struct Student));
+
+    // Input initial students
+    for (int i = 0; i < n; i++) {
+        printf("Student %d (Name Dept CGPA): ", i + 1);
+        scanf("%s %s %lf", students[i].name, students[i].dept, &students[i].cgpa);
+    }
+
+    printf("\nInitial Student Data:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s %s %.2f\n", students[i].name, students[i].dept, students[i].cgpa);
+    }
+
+    // Increase size by 2
+    int old_n = n;
+    students = realloc(students, (n + 2) * sizeof(struct Student));
+
+    // Input only the new students
+    for (int i = old_n; i < n + 2; i++) {
+        printf("New Student %d (Name Dept CGPA): ", i + 1);
+        scanf("%s %s %lf", students[i].name, students[i].dept, &students[i].cgpa);
+    }
+    n = n + 2; // Update total count
+
+    printf("\nModified Student Data:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s %s %.2f\n", students[i].name, students[i].dept, students[i].cgpa);
+    }
+
+    /// Storing
+    FILE *fptr = fopen("students.txt", "w");
+    if (fptr == NULL) {
+        printf("Error opening file for writing!\n");
+        free(students);
+        return 1;
+    }
+
+    for (int i = 0; i < n; i++) {
+        fprintf(fptr, "%s %s %.2f\n", students[i].name, students[i].dept, students[i].cgpa);
+    }
+    fclose(fptr);
+
+    /// Reading
+    struct Student *readstudents = malloc(n * sizeof(struct Student));
+    fptr = fopen("students.txt", "r");
+    if (fptr == NULL) {
+        printf("Error opening file for reading!\n");
+        free(students);
+        free(readstudents);
+        return 1;
+    }
+
+    for (int i = 0; i < n; i++) {
+        fscanf(fptr, "%s %s %lf", readstudents[i].name, readstudents[i].dept, &readstudents[i].cgpa);
+    }
+    fclose(fptr);
+
+    printf("\nData read from file:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s %s %.2f\n", readstudents[i].name, readstudents[i].dept, readstudents[i].cgpa);
+    }
+
+    free(students);
+    free(readstudents);
+
+    return 0;
+}
